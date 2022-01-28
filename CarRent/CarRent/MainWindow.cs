@@ -55,5 +55,10 @@ namespace CarRent
             _login.Close();
 
         }
+
+        private void manageVehiclesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

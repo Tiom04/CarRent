@@ -64,7 +64,6 @@ namespace CarRent
             this.Btn_resetPassword.TabIndex = 2;
             this.Btn_resetPassword.Text = "Reset";
             this.Btn_resetPassword.UseVisualStyleBackColor = true;
-            this.Btn_resetPassword.Click += new System.EventHandler(this.Btn_savePassword_Click);
             // 
             // Tb_ConfirmPassword
             // 
