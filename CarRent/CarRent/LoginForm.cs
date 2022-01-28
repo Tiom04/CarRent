@@ -7,14 +7,15 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarRent
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -51,7 +52,10 @@ namespace CarRent
                 }
                 else//user exists
                 {
-
+                    Thread.Sleep(1000);
+                    var mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Hide();
                 }
 
 
