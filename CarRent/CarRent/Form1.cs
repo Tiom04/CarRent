@@ -33,7 +33,6 @@ namespace CarRent
                 MessageBox.Show("Enter password first");
                 Tb_Password.Focus();
             }
-
             MessageBox.Show($"Login = {log}, Password = {pass}");
 
         }

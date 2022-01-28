@@ -83,6 +83,7 @@ namespace CarRent
             this.Tb_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Tb_Password.Location = new System.Drawing.Point(501, 174);
             this.Tb_Password.Name = "Tb_Password";
+            this.Tb_Password.PasswordChar = '*';
             this.Tb_Password.Size = new System.Drawing.Size(283, 34);
             this.Tb_Password.TabIndex = 5;
             // 
