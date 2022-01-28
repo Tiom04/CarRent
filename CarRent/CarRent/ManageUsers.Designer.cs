@@ -47,6 +47,7 @@ namespace CarRent
             this.Btn_Refresh.TabIndex = 0;
             this.Btn_Refresh.Text = "refresh";
             this.Btn_Refresh.UseVisualStyleBackColor = true;
+            this.Btn_Refresh.Click += new System.EventHandler(this.Btn_Refresh_Click);
             // 
             // dataGridUsers
             // 
@@ -107,6 +108,7 @@ namespace CarRent
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ManageUsers";
             this.Text = "ManageUsers";
+            this.Load += new System.EventHandler(this.ManageUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsers)).EndInit();
             this.ResumeLayout(false);
 

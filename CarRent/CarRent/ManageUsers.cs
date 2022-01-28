@@ -15,6 +15,7 @@ namespace CarRent
         public ManageUsers()
         {
             InitializeComponent();
+
         }
 
         private void Btn_ResetPassword_Click(object sender, EventArgs e)
@@ -42,8 +43,24 @@ namespace CarRent
 
         private void PopulateGrid()
         {
-            //
+            //get all users from db
+            var users = new List<User>();
+            dataGridUsers.DataSource = users;
+            dataGridUsers.Columns["username"].HeaderText = "Username";
+            dataGridUsers.Columns["name"].HeaderText = "Name";
+            dataGridUsers.Columns["isActive"].HeaderText = "Active";
+            dataGridUsers.Columns["id"].Visible = false;
+        }
 
+        private void Btn_Refresh_Click(object sender, EventArgs e)
+        {
+            PopulateGrid();
+
+        }
+
+        private void ManageUsers_Load(object sender, EventArgs e)
+        {
+            PopulateGrid();
         }
     }
 }

@@ -73,6 +73,7 @@
     <Compile Include="ResetPassword.Designer.cs">
       <DependentUpon>ResetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

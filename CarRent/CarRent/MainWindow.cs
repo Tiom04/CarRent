@@ -25,7 +25,7 @@ namespace CarRent
         {
             _login = loginForm;
             user = userModel;
-            roleName = "systAdmin";
+            roleName = "admin";
             //user.role      role:id,name,shortname
             //roleName= userModel.role.shortname;
 
@@ -38,11 +38,15 @@ namespace CarRent
         {
             //if user pass = default pass -> window for pass reset
 
+            var resetPassword = new ResetPassword();
+            resetPassword.ShowDialog();
             
 
             if(roleName != "admin")
             {
                 //hide some item
+                manageUsersToolStripMenuItem.Visible = false;
+
             }
 
 
@@ -59,6 +63,13 @@ namespace CarRent
         private void manageVehiclesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageUsers manageUsers = new ManageUsers();
+            manageUsers.ShowDialog();
+            Hide();
         }
     }
 }

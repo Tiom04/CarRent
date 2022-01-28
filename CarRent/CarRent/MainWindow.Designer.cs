@@ -74,6 +74,7 @@ namespace CarRent
             this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
             this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(116, 24);
             this.manageUsersToolStripMenuItem.Text = "Manage Users";
+            this.manageUsersToolStripMenuItem.Click += new System.EventHandler(this.manageUsersToolStripMenuItem_Click);
             // 
             // addRentalToolStripMenuItem
             // 
