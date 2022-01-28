@@ -45,7 +45,7 @@ namespace CarRent
                 SHA256 sha = SHA256.Create();
                 string hashPassword = Utils.HashPassword(pass);
                 //get active user by username, password(hashpassword)
-                var user = 1;//user from db
+                var user = "Artem";//user from db
                 if(user == null)
                 {
                     MessageBox.Show("Incorrect password or login");
@@ -53,17 +53,14 @@ namespace CarRent
                 else//user exists
                 {
                     Thread.Sleep(1000);
-                    var mainWindow = new MainWindow();
+                    var mainWindow = new MainWindow(this, user);
                     mainWindow.Show();
                     Hide();
                 }
-
-
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Call admin");
             }
         }
 
