@@ -36,6 +36,17 @@ namespace CarRent
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            //if user pass = default pass -> window for pass reset
+
+            
+
+            if(roleName != "admin")
+            {
+                //hide some item
+            }
+
+
+
 
         }
 

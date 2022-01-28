@@ -21,5 +21,9 @@ namespace CarRent
             return stringBuilder.ToString();
 
         }
+        public static string DefaultHashPassword()
+        {
+            return HashPassword("qwerty123");
+        }
     }
 }
