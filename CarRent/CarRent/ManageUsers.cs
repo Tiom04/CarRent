@@ -63,12 +63,38 @@ namespace CarRent
         private void Btn_Refresh_Click(object sender, EventArgs e)
         {
             PopulateGrid();
-
         }
 
         private void ManageUsers_Load(object sender, EventArgs e)
         {
             PopulateGrid();
+        }
+
+        private void Btn_ActivateDisactivateUser_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var id = (int)dataGridUsers.SelectedRows[0].Cells["Id"].Value;
+                //MessageBox.Show(id.ToString());
+                var user = _dbContext.Users.FirstOrDefault(x => x.Id == id);
+                if(user != null)
+                {
+                    user.IsActive = !user.IsActive;
+                    //user.IsActive = user.IsActive == true? false : true;
+                    _dbContext.SaveChanges();
+                    MessageBox.Show("User status was changed");
+                    PopulateGrid();
+                }
+                else
+                {
+                    MessageBox.Show("User doesn't exist");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

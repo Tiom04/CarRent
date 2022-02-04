@@ -57,7 +57,8 @@ namespace CarRent
             this.dataGridUsers.Name = "dataGridUsers";
             this.dataGridUsers.RowHeadersWidth = 51;
             this.dataGridUsers.RowTemplate.Height = 24;
-            this.dataGridUsers.Size = new System.Drawing.Size(1890, 761);
+            this.dataGridUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridUsers.Size = new System.Drawing.Size(1325, 761);
             this.dataGridUsers.TabIndex = 1;
             // 
             // Btn_AddNewUser
@@ -86,19 +87,20 @@ namespace CarRent
             // Btn_ActivateDisactivateUser
             // 
             this.Btn_ActivateDisactivateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Btn_ActivateDisactivateUser.Location = new System.Drawing.Point(1470, 1032);
+            this.Btn_ActivateDisactivateUser.Location = new System.Drawing.Point(971, 1020);
             this.Btn_ActivateDisactivateUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Btn_ActivateDisactivateUser.Name = "Btn_ActivateDisactivateUser";
             this.Btn_ActivateDisactivateUser.Size = new System.Drawing.Size(338, 72);
             this.Btn_ActivateDisactivateUser.TabIndex = 4;
             this.Btn_ActivateDisactivateUser.Text = "Activate/Deactivate user";
             this.Btn_ActivateDisactivateUser.UseVisualStyleBackColor = true;
+            this.Btn_ActivateDisactivateUser.Click += new System.EventHandler(this.Btn_ActivateDisactivateUser_Click);
             // 
             // ManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1872, 1342);
+            this.ClientSize = new System.Drawing.Size(1332, 1342);
             this.Controls.Add(this.Btn_ActivateDisactivateUser);
             this.Controls.Add(this.Btn_ResetPassword);
             this.Controls.Add(this.Btn_AddNewUser);
