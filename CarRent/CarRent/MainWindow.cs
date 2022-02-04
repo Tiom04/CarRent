@@ -13,7 +13,7 @@ namespace CarRent
     public partial class MainWindow : Form
     {
         private LoginForm _login;
-        public string user;//model (db)
+        public User user;
         public string roleName;
 
         public MainWindow()
@@ -21,18 +21,14 @@ namespace CarRent
             InitializeComponent();
         }
 
-        public MainWindow(LoginForm loginForm, string userModel)
+        public MainWindow(LoginForm loginForm, User userModel)
         {
             InitializeComponent();
             _login = loginForm;
             user = userModel;
-            roleName = "admin";
-            //user.role      role:id,name,shortname
-            //roleName= userModel.role.shortname;
+            roleName = user.UserRoles.FirstOrDefault().Role.ShortName;
 
-            
-
-            MessageBox.Show($"{user}");
+            //MessageBox.Show($"{user.Username} {roleName}");
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
@@ -44,7 +40,7 @@ namespace CarRent
             //resetPassword.ShowDialog();
             
 
-            if(roleName != "admin")
+            if(roleName.ToLower() == "user")
             {
                 //hide some item
                 manageUsersToolStripMenuItem.Visible = false;

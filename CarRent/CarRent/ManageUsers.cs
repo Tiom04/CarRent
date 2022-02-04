@@ -12,6 +12,7 @@ namespace CarRent
 {
     public partial class ManageUsers : Form
     {
+        private readonly CarRentDbContext _dbContext = new CarRentDbContext();
         public ManageUsers()
         {
             InitializeComponent();
@@ -43,13 +44,20 @@ namespace CarRent
 
         private void PopulateGrid()
         {
-            //get all users from db
-            var users = new List<User>();
+            var users = _dbContext.Users.Select(x => new
+            {
+                x.Id,
+                x.Username,
+                x.UserRoles.FirstOrDefault().Role.Name,
+                x.IsActive
+            }).ToList();
+
             dataGridUsers.DataSource = users;
-            dataGridUsers.Columns["username"].HeaderText = "Username";
-            dataGridUsers.Columns["name"].HeaderText = "Name";
-            dataGridUsers.Columns["isActive"].HeaderText = "Active";
-            dataGridUsers.Columns["id"].Visible = false;
+
+            dataGridUsers.Columns["Username"].HeaderText = "Username";
+            dataGridUsers.Columns["Name"].HeaderText = "Role Name";
+            dataGridUsers.Columns["IsActive"].HeaderText = "Active";
+            dataGridUsers.Columns["Id"].Visible = false;
         }
 
         private void Btn_Refresh_Click(object sender, EventArgs e)

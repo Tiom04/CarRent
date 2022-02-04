@@ -15,6 +15,7 @@ namespace CarRent
 {
     public partial class LoginForm : Form
     {
+        private CarRentDbContext _dbContext = new CarRentDbContext();
         public LoginForm()
         {
             InitializeComponent();
@@ -25,7 +26,6 @@ namespace CarRent
             string log, pass;
             log = Tb_Username.Text;
             pass = Tb_Password.Text;
-
             if (string.IsNullOrWhiteSpace(log))
             {
                 MessageBox.Show("Enter login first");
@@ -44,16 +44,21 @@ namespace CarRent
             {
                 SHA256 sha = SHA256.Create();
                 string hashPassword = Utils.HashPassword(pass);
-                //get active user by username, password(hashpassword)
-                var user = "Artem";//user from db
-                if(user == null)
+
+                var userFromDb = _dbContext.Users
+                                        .FirstOrDefault(x => x.Password == hashPassword && x.Username == log);
+
+                //var userFromDb = (from user in _dbContext.Users
+                //           where user.Password == hashPassword && user.Username == log
+                //           select user).FirstOrDefault();//
+
+                if(userFromDb == null)
                 {
                     MessageBox.Show("Incorrect password or login");
                 }
                 else//user exists
                 {
-                    Thread.Sleep(1000);
-                    MainWindow mainWindow = new MainWindow(this, user);
+                    MainWindow mainWindow = new MainWindow(this, userFromDb);
                     mainWindow.Show();
                     Hide();
                 }
