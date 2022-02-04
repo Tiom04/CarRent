@@ -23,6 +23,7 @@ namespace CarRent
 
         public MainWindow(LoginForm loginForm, string userModel)
         {
+            InitializeComponent();
             _login = loginForm;
             user = userModel;
             roleName = "admin";
@@ -38,8 +39,9 @@ namespace CarRent
         {
             //if user pass = default pass -> window for pass reset
 
-            var resetPassword = new ResetPassword();
-            resetPassword.ShowDialog();
+
+            //var resetPassword = new ResetPassword();
+            //resetPassword.ShowDialog();
             
 
             if(roleName != "admin")
