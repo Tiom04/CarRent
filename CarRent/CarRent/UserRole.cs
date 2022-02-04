@@ -1,7 +1,11 @@
-﻿namespace CarRent
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace CarRent
 {
     public class UserRole
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int? UserId { get; set; }
         public int? RoleId { get; set; }
