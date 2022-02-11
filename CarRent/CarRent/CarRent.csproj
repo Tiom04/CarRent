@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCarWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCarWindow.Designer.cs">
+      <DependentUpon>AddCarWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarRentalRecord.cs" />
     <Compile Include="CarRentDbContext.cs" />
     <Compile Include="LoginForm.cs">
@@ -95,6 +101,9 @@
     <Compile Include="User.cs" />
     <Compile Include="UserRole.cs" />
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="AddCarWindow.resx">
+      <DependentUpon>AddCarWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>

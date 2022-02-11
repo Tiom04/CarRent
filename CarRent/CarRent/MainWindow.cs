@@ -70,5 +70,13 @@ namespace CarRent
             manageUsers.ShowDialog();
             Hide();
         }
+
+        private void addVehicleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddCarWindow addCar = new AddCarWindow();
+            addCar.Show();
+
+
+        }
     }
 }
